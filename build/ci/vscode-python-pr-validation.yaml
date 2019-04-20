@@ -104,64 +104,64 @@ jobs:
   steps:
     - template: templates/test_phases.yml
 
-- job: Smoke
-  dependsOn:
-    - Build
-  strategy:
-    matrix:
-      # Smoke tests on min and latest versions of Python.
-      "Mac-Py3.7":
-          PythonVersion: "3.7"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=smoke"
+# - job: Smoke
+#   dependsOn:
+#     - Build
+#   strategy:
+#     matrix:
+#       # Smoke tests on min and latest versions of Python.
+#       "Mac-Py3.7":
+#           PythonVersion: "3.7"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=smoke"
 
-      "Mac-Py2.7":
-          PythonVersion: "2.7"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=smoke"
-      # Terminal.
-      "Mac-Py3.7 Terminal":
-          PythonVersion: "3.7"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
+#       "Mac-Py2.7":
+#           PythonVersion: "2.7"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=smoke"
+#       # Terminal.
+#       "Mac-Py3.7 Terminal":
+#           PythonVersion: "3.7"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
 
-      "Mac-Py3.6 Terminal":
-          PythonVersion: "3.6"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
+#       "Mac-Py3.6 Terminal":
+#           PythonVersion: "3.6"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
 
-      "Mac-Py3.5 Terminal":
-          PythonVersion: "3.5"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
+#       "Mac-Py3.5 Terminal":
+#           PythonVersion: "3.5"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
 
-      "Mac-Py2.7 Terminal":
-          PythonVersion: "2.7"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
-      # Testing
-      "Mac-Py3.7 Testing":
-          PythonVersion: "3.7"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=test"
+#       "Mac-Py2.7 Terminal":
+#           PythonVersion: "2.7"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=terminal --tags=~pipenv --tags=~venv"
+#       # Testing
+#       "Mac-Py3.7 Testing":
+#           PythonVersion: "3.7"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=test"
 
-      "Mac-Py3.6 Testing":
-          PythonVersion: "3.6"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=test"
+#       "Mac-Py3.6 Testing":
+#           PythonVersion: "3.6"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=test"
 
-      "Mac-Py3.5 Testing":
-          PythonVersion: "3.5"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=test"
+#       "Mac-Py3.5 Testing":
+#           PythonVersion: "3.5"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=test"
 
-      "Mac-Py2.7 Testing":
-          PythonVersion: "2.7"
-          VMImageName: "macos-10.13"
-          Tags: "--tags=test"
+#       "Mac-Py2.7 Testing":
+#           PythonVersion: "2.7"
+#           VMImageName: "macos-10.13"
+#           Tags: "--tags=test"
 
-  pool:
-    vmImage: $(VMImageName)
+#   pool:
+#     vmImage: $(VMImageName)
 
-  steps:
-    - template: templates/uitest_phases.yml
+#   steps:
+#     - template: templates/uitest_phases.yml
